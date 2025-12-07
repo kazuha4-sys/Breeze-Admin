@@ -9,6 +9,7 @@ class BreezeAdminServiceProvider extends ServiceProvider
 {
     public function boot()
     {
+        
         // Rotas
         $this->loadRoutesFrom(__DIR__.'/../Routes/admin.php');
 
