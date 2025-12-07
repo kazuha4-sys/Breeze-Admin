@@ -1,18 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Kazuha\BreezeAdmin\Http\Controllers\UserController;
 use Kazuha\BreezeAdmin\Http\Controllers\DashboardController;
+use Kazuha\BreezeAdmin\Http\Controllers\UserController;
 
-Route::middleware(['web', 'auth'])
+Route::middleware(['web', 'auth', 'isadmin'])
     ->prefix('admin')
     ->group(function () {
 
-        // Dashboard
         Route::get('/', [DashboardController::class, 'index'])
             ->name('breezeadmin.dashboard');
 
-        // Users
         Route::get('/users', [UserController::class, 'index'])
             ->name('breezeadmin.users.index');
 

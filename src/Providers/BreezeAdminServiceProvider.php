@@ -7,6 +7,14 @@ use Illuminate\Support\Facades\Route;
 
 class BreezeAdminServiceProvider extends ServiceProvider
 {
+
+
+    public function register()
+    {
+        $this->commands([
+            \Kazuha\BreezeAdmin\Console\Commands\CreateAdminUser::class,
+        ]);
+    }
     public function boot()
     {
         
@@ -15,6 +23,8 @@ class BreezeAdminServiceProvider extends ServiceProvider
 
         // Views
         $this->loadViewsFrom(__DIR__.'/../Views', 'breezeadmin');
+
+        $this->app['router']->aliasMiddleware('isadmin', \Kazuha\BreezeAdmin\Http\Middleware\IsAdmin::class);
 
         // Config
         $this->publishes([
