@@ -22,14 +22,14 @@ class BreezeAdminServiceProvider extends ServiceProvider
         $this->loadRoutesFrom(__DIR__.'/../Routes/admin.php');
 
         // Views
-        $this->loadViewsFrom(__DIR__.'/../Views', 'breezeadmin');
+        $this->loadViewsFrom(__DIR__.'/../../Resources/Views', 'breezeadmin');
 
         $this->app['router']->aliasMiddleware('isadmin', \Kazuha\BreezeAdmin\Http\Middleware\IsAdmin::class);
 
         // Config
         $this->publishes([
             __DIR__.'/../Config/breezeadmin.php' => config_path('breezeadmin.php'),
-            __DIR__.'/../Views' => resource_path('views/vendor/breezeadmin'),
+            __DIR__.'/../../Resources/Views' => resource_path('views/vendor/breezeadmin'),
         ], 'breezeadmin-config', 'views');
 
         // Migrations
