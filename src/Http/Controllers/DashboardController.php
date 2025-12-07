@@ -8,6 +8,9 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        return view('breezeadmin::dashboard');
+        return view('breezeadmin::dashboard')[
+            'userCount' => \App\Models\User::count(),
+            'adminCount' => \App\Models\User::where('is_admin', 1)->count(),
+        ]);
     }
 }

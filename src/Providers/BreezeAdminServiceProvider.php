@@ -29,7 +29,8 @@ class BreezeAdminServiceProvider extends ServiceProvider
         // Config
         $this->publishes([
             __DIR__.'/../Config/breezeadmin.php' => config_path('breezeadmin.php'),
-        ], 'breezeadmin-config');
+            __DIR__.'/../Views' => resource_path('views/vendor/breezeadmin'),
+        ], 'breezeadmin-config', 'views');
 
         // Migrations
         $this->loadMigrationsFrom(__DIR__.'/../Database/migrations');
