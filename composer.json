@@ -1,6 +1,6 @@
 {
     "name": "kazuha/breeze-admin",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "description": "Pacote de painel administrativo para Laravel usando Breeze.",
     "type": "library",
     "license": "MIT",
