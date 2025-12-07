@@ -1,0 +1,33 @@
+{
+    "name": "kazuha/breeze-admin",
+    "version": "1.0.0",
+    "description": "Pacote de painel administrativo para Laravel usando Breeze.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["laravel", "admin", "painel", "breeze", "kazuha"],
+    "authors": [
+        {
+            "name": "Kauan Da Silva Jarandilla Cybis",
+            "email": "00001138422976SP@al.educacao.sp.gov.br"
+        }
+
+    ],
+    "autoload": {
+        "psr-4": {
+            "Kazuha\\BreezeAdmin\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Kazuha\\BreezeAdmin\\Providers\\BreezeAdminServiceProvider"
+            ]
+        }
+    },
+    "require": {
+        "php": ">=8.1",
+        "illuminate/support": ">=8.0"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
