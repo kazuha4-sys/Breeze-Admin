@@ -18,6 +18,9 @@ class BreezeAdminServiceProvider extends ServiceProvider
     public function boot()
     {
         
+        // Debug para ver se o Service Provider ta vendo o controller e as views
+        // dd(is_dir(__DIR__.'/../resources/views'));
+        
         // Rotas
         $this->loadRoutesFrom(__DIR__.'/../Routes/admin.php');
 
