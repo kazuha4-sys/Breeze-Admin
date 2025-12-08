@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Breeze Admin - Documentação</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+    
+    <style>
+        body {
+            background-color: #000; /* fundo preto */
+            color: #fff; /* letras brancas */
+        }
+
+        .sidebar {
+            width: 260px;
+            background: #000;
+            border-right: 1px solid #333;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 10px 15px;
+            border-radius: 6px;
+            color: #fff;
+        }
+
+        .sidebar a:hover {
+            background: #222;
+        }
+
+        .content h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .content h2 {
+            font-size: 1.4rem;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        pre {
+            background: #1e293b;
+            color: #fff;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+        }
+
+        /* Breeze Admin vermelho */
+        .titulo-vermelho {
+            color: red;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="flex">
+        <!-- Sidebar -->
+        <div class="sidebar h-screen p-5 sticky top-0">
+            <h2 class="text-xl font-bold mb-5">Breeze Admin</h2>
+            <nav>
+                <a href="#intro">Introdução</a>
+                <a href="#instalacao">Instalação</a>
+                <a href="#configuracao">Configuração</a>
+                <a href="#usuarios">Gerenciamento de Usuários</a>
+                <a href="#permissoes">Permissões & Roles</a>
+                <a href="#views">Views & Layouts</a>
+                <a href="#rotas">Rotas</a>
+                <a href="#migrations">Migrations</a>
+                <a href="#componentes">Componentes do Painel</a>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content flex-1 p-10">
+
+            <!-- Título principal alterado -->
+            <h1>Laravel</h1>
+            <p class="titulo-vermelho">Breeze Admin</p>
+
+            <section id="intro">
+                <h1>Introdução</h1>
+                <p>O <strong>Breeze Admin</strong> é um pacote para Laravel que adiciona um painel administrativo
+                    baseado no Breeze, oferecendo rotas, views, autenticação e módulos de administração prontos para
+                    uso.</p>
+                <p>Ideal para projetos que precisam de um painel rápido, modular e simples.</p>
+            </section>
+
+            <section id="instalacao">
+                <h2>Instalação</h2>
+                <p>Instale o pacote via Composer:</p>
+                <pre>composer require kazuha4-sys/breeze-admin</pre>
+                <p>Depois publique os arquivos:</p>
+                <pre>php artisan vendor:publish --tag=breeze-admin</pre>
+            </section>
+
+            <section id="configuracao">
+                <h2>Configuração</h2>
+                <p>Após publicar, o pacote cria rotas, controllers e views prontas. Certifique-se de que sua
+                    autenticação Breeze esteja instalada.</p>
+            </section>
+
+            <section id="usuarios">
+                <h2>Gerenciamento de Usuários</h2>
+                <p>O painel fornece:</p>
+                <ul class="list-disc ml-6">
+                    <li>Listagem paginada</li>
+                    <li>Edição</li>
+                    <li>Criação</li>
+                    <li>Banimento</li>
+                    <li>Reset de senha</li>
+                </ul>
+            </section>
+
+            <section id="permissoes">
+                <h2>Permissões & Roles</h2>
+                <p>O pacote oferece integração com roles e permissões simples e funcionais.</p>
+            </section>
+
+            <section id="views">
+                <h2>Views & Layouts</h2>
+                <p>As views usam Tailwind e seguem o estilo do Breeze original, mantendo leveza e minimalismo.</p>
+            </section>
+
+            <section id="rotas">
+                <h2>Rotas</h2>
+                <pre>Route::prefix('admin')->group(function() {
+    require __DIR__.'/admin.php';
+});</pre>
+            </section>
+
+            <section id="migrations">
+                <h2>Migrations</h2>
+                <p>O pacote adiciona migrations para tabelas administrativas quando necessário.</p>
+            </section>
+
+            <section id="componentes">
+                <h2>Componentes do Painel</h2>
+                <p>Inclui tabela dinâmica, search bar, filtros e componentes blade reutilizáveis.</p>
+            </section>
+        </div>
+    </div>
+</body>
+
+</html>
