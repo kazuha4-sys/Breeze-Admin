@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Breeze Admin - Documentação</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
-    
     <style>
         body {
-            background-color: #000; /* fundo preto */
-            color: #fff; /* letras brancas */
+            background-color: #000;
+            /* fundo preto */
+            color: #fff;
+            /* letras brancas */
         }
 
         .sidebar {
@@ -30,14 +30,21 @@
             background: #222;
         }
 
-        .content h1 {
-            font-size: 2rem;
+        .content h3  {
+            font-size: 4rem;
             margin-bottom: 20px;
             color: #fff;
         }
 
+        .content a {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            color: #fff;
+            text-decoration: underline;
+        }
+
         .content h2 {
-            font-size: 1.4rem;
+            font-size: 2.4rem;
             margin-top: 30px;
             margin-bottom: 10px;
             color: #fff;
@@ -65,11 +72,17 @@
     <div class="flex">
         <!-- Sidebar -->
         <div class="sidebar h-screen p-5 sticky top-0">
-            <h2 class="text-xl font-bold mb-5">Breeze Admin</h2>
+
+            <!-- LOGO ALTERADA AQUI -->
+            <a class="text-2xl font-bold text-white mb-1" href="https://laravel.com" target="_blank">Laravel</h1>
+            <p class="text-red-600 text-lg font-semibold mb-6">Breeze Admin</p>
+            <!-- FIM DA LOGO -->
+
             <nav>
                 <a href="#intro">Introdução</a>
                 <a href="#instalacao">Instalação</a>
                 <a href="#configuracao">Configuração</a>
+                <a href="#criar-admin">Usuario Admin</a>
                 <a href="#usuarios">Gerenciamento de Usuários</a>
                 <a href="#permissoes">Permissões & Roles</a>
                 <a href="#views">Views & Layouts</a>
@@ -83,11 +96,10 @@
         <div class="content flex-1 p-10">
 
             <!-- Título principal alterado -->
-            <h1>Laravel</h1>
-            <p class="titulo-vermelho">Breeze Admin</p>
+            <a class="titulo-vermelho" href='https://github.com/kazuha4-sys/Breeze-Admin' target="_blank">Breeze Admin</a>
 
             <section id="intro">
-                <h1>Introdução</h1>
+                <h3>Introdução</h3>
                 <p>O <strong>Breeze Admin</strong> é um pacote para Laravel que adiciona um painel administrativo
                     baseado no Breeze, oferecendo rotas, views, autenticação e módulos de administração prontos para
                     uso.</p>
@@ -107,6 +119,29 @@
                 <p>Após publicar, o pacote cria rotas, controllers e views prontas. Certifique-se de que sua
                     autenticação Breeze esteja instalada.</p>
             </section>
+
+            <section id="criar-admin">
+                <h2>Criando o Usuário Admin</h2>
+
+                <p>Após instalar o pacote, é necessário criar o usuário administrador responsável pelo acesso ao
+                   painel.
+                   Antes disso, certifique-se de executar as migrations para preparar o banco de dados.</p>
+
+                <pre>
+                    php artisan migrate
+                </pre>
+
+                <p>Com o banco configurado, utilize o comando abaixo para gerar automaticamente o usuário admin.
+                    Ele será criado com credenciais padrão exibidas no terminal após a execução.</p>
+
+                <pre>
+                    php artisan breezeadmin:make-admin
+                </pre>
+
+                <p>Recomenda-se alterar a senha do usuário administrador após o primeiro acesso para garantir maior
+                    segurança.</p>
+            </section>
+
 
             <section id="usuarios">
                 <h2>Gerenciamento de Usuários</h2>
@@ -149,5 +184,4 @@
         </div>
     </div>
 </body>
-
 </html>
