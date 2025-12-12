@@ -1,106 +1,119 @@
-# Breeze AdminPainel
+# Breeze-Admin
 
-![Visitor Badge](https://komarev.com/ghpvc/?username=teu-usuario&color=red&style=flat-square)
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/kazuha/adminpainel"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
+Breeze Admin é um pacote Laravel para adicionar um painel administrativo simples, moderno e totalmente integrado ao **Laravel Breeze**. Ele permite adicionar funcionalidades de adminitração rapidamente em qualquer aplicação Laravel com autenticação Breeze já configurada.
 
 ---
 
-## Sobre o Projeto 
-O AdminPainel é um pacote em desenvolvimento criado para adicionar rapidamente um painel administrativo completo em projetos Laravel.
-Ele fornece gerenciamento de usuários, impersonation, dashboard e recursos essenciais para sistemas internos.
+## Funcionalidades Principais
 
+* 🔐 Autenticação integrada ao Laravel Breeze
 
-### funcionalidades
+* 📊 Dashboard administrativo
 
-- Dashboard Administrativo
-- Listagem de usuários 
-- edição de nome, email e outras informações
-- Exclusão de usuários
-- Impersonate (Entrar temporariamente como outro usuário)
-- Comandos Artisan de instalação
-- Migrations incluídas 
-- Views Personalizadas
-- Proteção via Auth (middleware Auth)
-- Instalação
+* 👤 Gerenciamento de usuários
+
+* 🔄 Edição de dados dos usuários
+
+* 🗑️ Remoção de usuários
+
+* 🧬 Impersonation (entrar como outro usuário)
+
+* ⚙️ Comandos artisan para instalação automática
+
+* 🔧 Migrations inclusas
+
+* 🖼️ Views personalizadas no Blade
+
+* 🛡️ Proteção de rotas via middleware Auth
 
 ---
 
 ## Requisitos 
 
-- **PHP 8.1+**
-- **Composer**
-- **Laravel 10+**
+Antes de usar, certifique-se de que seu ambiente atende aos requisitos:
+
+* PHP 8.1 ou superior
+
+* Laravel 10 ou superior
+
+* Composer instalado
+
+* Laravel Breeze configurado no projeto
 
 ---
 
-## Instalação 
-Clone ou instale o pacote localmente no seu projeto Laravel:
+## Instação
+
+Instalar o pacote é simples. Do terminal, no diretório do seu projeto Laravel:
 
 ```bash 
-    composer require kazuha/adminpainel
+Composer require kazuha/adminpainel
 ```
 
-Caso esteja usando o pacote local via path, configure no compose:
+Se estiver trabalhando com o pacote local (via path), adiciona ao **composer.json**:
+```bash
+"repositories": [
+  {
+    "type": "path",
+    "url": "packages/kazuha/adminpainel"
+  }
+]
+```
 
+Depois executa:
 ```bash 
-    "repositories": [
-        {
-            "type": "path",
-            "url": "packages/kazuha/adminpainel"
-        }
-    ]
+composer update 
 ```
 
-Depois de um update no composer:
+---
+
+## Configuração do Painel
+
+Uma vez instalado, rode o comando de instalação do painel:
+```bash
+php artisan adminpainel:install
+```
+Esse comando irái:
+
+* Rodar migrations necessárias 
+* Criar usuários administrativo inicial (com credenciais exibidas no terminal)
+
+---
+
+## Acessando o Painel
+
+Depois da instalação:
+
+1. Acesse **/login** e entre com as credenciais exibidas.
+
+2. Após login, visite a rota /admin para acessar o painel administrativo.
+
+---
+
+## Testes & Desenvolvimentos
+
+Se quiser testar ou desenvolver novas features:
+
+* Faça um **fork**
+
+* Crie uma branch no feature:
 
 ```bash
-    composer update
+git checkout -b feature/nova-feature
 ```
 
----
+* Commit & Push
 
-## Instalação do Painel 
-
-Execute o comando de instalação:
-
-```bash
-    php artisan adminpainel:install
-```
-
-Com esse comando você criar as migrations necessarias, cria o usuário de Adin inicial (usuario se senha serão exibidos no terminal onde você executou o comando de instalçao do admin)
-
+* Abra um Pull Request
 
 ---
 
-## Acessando o Painel 
-
-
-
-Depois da instalação ser concluida, acesse a rota de login **/login** e complete os campos com as informações que está no terminal. Após estar logado acesse a pagina de admin **/admin**.
+# Contribuições
+Contribuições são bem-vindas!
+Seja com correções, novas funcionalidades, melhorias na documentação ou ajustes gerais — qualquer ajuda conta! 
 
 ---
 
-## Contribuições 
+## Licença
 
-Este pacote está em versão de desenvolvimento.
-Algumas funcionalidades podem sofrer ajustes e receber melhorias futuras.
-Atualizações serão liberadas continuamente, e quem quiser pode contribuir enviando PRs.
-
-Qualquer ajuda é bem-vinda, como correções, novas features, melhorias no código, documentação ou finaceiramente.
-
-**PIX:** 11957136678
-**(Qualquer valor já ajuda a manter o projeto vivo)**
-
----
-
-# **AVISO IMPORTANTE**
-
-Como este é um pacote ainda em desenvolvimeto, erros ou comportamentos inesperados podem ocorrer.
-Versões futuras trarão correções, refinamentos e novas funcionalidades.
-
----
-
-## Licença 
-
-Este projeto é distribuído sob a licença MIT.
+Distribuído sob a **MIT License** — veja o arquivo ```LICENSE``` para mais detalhes.
