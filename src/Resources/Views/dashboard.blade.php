@@ -1,45 +1,66 @@
-<div class="min-h-screen bg-gray-900 text-white p-10">
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            Painel Admin
+        </h2>
+    </x-slot>
 
-    <h1 class="text-4xl font-bold mb-6">
-        Painel Admin 🔥
-    </h1>
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-        <!-- Card total de usuários -->
-        <div class="bg-gray-800 rounded-xl p-6 border border-gray-700 shadow-lg">
-            <h2 class="text-xl font-semibold mb-2">Usuários totais</h2>
-            <p class="text-3xl font-bold text-blue-400">
-                {{ $userCount }}
-            </p>
+                {{-- Usuários totais --}}
+                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                    <div class="p-6">
+                        <h3 class="text-sm font-medium text-gray-500">
+                            Usuários totais
+                        </h3>
+                        <p class="mt-2 text-3xl font-bold text-gray-800">
+                            {{ $userCount }}
+                        </p>
+                    </div>
+                </div>
+
+                {{-- Admins --}}
+                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                    <div class="p-6">
+                        <h3 class="text-sm font-medium text-gray-500">
+                            Admins
+                        </h3>
+                        <p class="mt-2 text-3xl font-bold text-gray-800">
+                            {{ $adminCount }}
+                        </p>
+                    </div>
+                </div>
+
+                {{-- Usuário logado --}}
+                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                    <div class="p-6">
+                        <h3 class="text-sm font-medium text-gray-500">
+                            Logado como
+                        </h3>
+                        <p class="mt-2 text-lg font-semibold text-gray-800">
+                            {{ auth()->user()->name }}
+                        </p>
+                        <p class="text-sm text-gray-500">
+                            {{ auth()->user()->email }}
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            {{-- Ações --}}
+            <div class="mt-8">
+                <a href="{{ url('/dashboard') }}"
+                   class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md
+                          font-semibold text-xs text-white uppercase tracking-widest
+                          hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    Voltar ao site
+                </a>
+            </div>
+
         </div>
-
-        <!-- Card total admins -->
-        <div class="bg-gray-800 rounded-xl p-6 border border-gray-700 shadow-lg">
-            <h2 class="text-xl font-semibold mb-2">Admins</h2>
-            <p class="text-3xl font-bold text-green-400">
-                {{ $adminCount }}
-            </p>
-        </div>
-
-        <!-- Card usuário logado -->
-        <div class="bg-gray-800 rounded-xl p-6 border border-gray-700 shadow-lg">
-            <h2 class="text-xl font-semibold mb-2">Logado como</h2>
-            <p class="text-lg font-semibold text-purple-400">
-                {{ auth()->user()->name }}
-            </p>
-            <p class="text-sm text-gray-400">
-                {{ auth()->user()->email }}
-            </p>
-        </div>
-
     </div>
-
-    <div class="mt-10">
-        <a href="{{ url('/') }}"
-           class="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg text-white font-semibold">
-            Voltar ao site
-        </a>
-    </div>
-
-</div>
+</x-app-layout>
